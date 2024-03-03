@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Steph Landing page</title>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link href='http://fonts.googleapis.com/css?family=Coustard' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+        <meta name="description" content="">
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+        <style>
+
+            *{
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body{ 
+                background-size: cover;
+                display: flex;
+                flex-direction: column; 
+                color:black;  
+                font-family: 'Quicksand', sans-serif;   
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+
+            #time, #time1{
+                font-size: 8rem;
+            }
+
+            h1{
+                margin-bottom: 3rem;
+            }
+
+            h2{
+                margin-bottom: 0.5rem;
+                opacity: 0.8;
+            }
+
+            @media(max-width: 700px){
+                #time, #time1{
+                    font-size: 6rem;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="fluid-container background-image text-center">
+            <time id="time">12:40:19 PM</time>
+
+            <h1>
+                <span id="greeting">Good Afternoon</span>
+                <span id="name" contenteditable="true"></span>
+            </h1>
+
+            <h2>What Is Your Focus For Today<span id="username"></span>?</h2>
+            <h2 id="focus" contenteditable="true"></h2>
+
+            <h2 id="days"></h2>
+
+        </div>
+
+        
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/scrollReveal.js" type="text/javascript"></script>
+        <script src="js/custom.js" type="text/javascript"></script>
+        <script src="app.js"></script>
+        <script>
+        var date1 = new Date("05/28/2020");
+        var date2 = new Date();   
+        var Difference_In_Time =Math.round(date2.getTime() - date1.getTime())
+        var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24)
+        var Final =Difference_In_Days.toFixed(0)
+        document.getElementById('days').innerText ="Number of Days spent coding is " + Final;
+        
+        </script>
+    </body>
+</html>
